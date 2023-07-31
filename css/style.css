@@ -29,12 +29,43 @@ body{
 .page{
     padding-top: 10vw;
 }
-.Intro{
+.Intro,.ComputerOnly,.MobileOnly,.Continued,.Code,.ExampleCode,.CodeBox,.SelfDo{
     border-top: 1vw;
     padding-top: 5vw;
     padding-left: 2vw;
     display: flex;
-    height: 10vh;
+    width: 100%;
     color: green;
     font-size: 25px;
+}
+.homeCalcButton{
+    border-top: 1vw;
+    margin: 2vw;
+    padding-left: 1vw;
+    height: 4vw;
+    width: 12vw;
+    font-size: 25px;
+    background-color: green;
+}
+.homeCalcButton:hover{
+    background-color: greenyellow;
+}
+.exampleForm{
+    width: 100%;
+}
+/* checks if media is NOT computer */
+@media (max-width:800px) {
+    .ComputerOnly{
+        display: none;
+    }
+    .Intro,.Continued,.ComputerOnly,.MobileOnly{
+        width: 50%;
+    }
+    
+}
+/*checks if media is NOT tablet/mobile */
+@media (min-width:800px) {
+    .MobileOnly{
+        display: none;
+    }  
 }
