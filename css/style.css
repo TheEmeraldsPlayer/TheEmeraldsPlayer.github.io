@@ -201,6 +201,7 @@ body{
 }
 .Extra{
     background-color: var(--primary-color);
+    color:var(--secondary-color);
     width: 100%;
     float: left;
     height: 100vh;
