@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- header -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src = "js/script.js" defer></script>
@@ -8,17 +9,26 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Navigation bar at the top -->
     <div class = "navi">
         <nav>
+            <!-- Navigation bar items-->
             <ul class = "navWhole">
-                <li class = "navItem"> Nav Bar</li>
+                <li class = "navItem" id = "NavBar"> Nav Bar</li>
+                <!-- Allow colour change to suit light/dark mode-->
+                <li class = "navItem" id = "darkModeButton">Light Mode</li>
+                <!-- Redircect to home-->
                 <li class = "navItem" id = "homeButton">Home</li>
+                <!-- Redircect to cpp page-->
                 <li class = "navItem" id = "cppButton">C++</li>
+                <!-- Redircect to python page-->
                 <li class = "navItem" id = "pyButton">Python</li>
             </ul>
         </nav>
     </div>
+    <!-- Home page (Page 1) -->
     <div class = "page" id = "page0">
+        <!-- Introduction and info -->
         <div class = "Intro">
             Welcome to coding. Coding is very satsifying once you know it. It is like another language, to learn it, you speak it. There is always more than a set of statements to get the expected result.  
         </div>
@@ -28,6 +38,7 @@
         <div class = ComputerOnly>
             More info is that coding is a mentally enhausting but rewarding work. 
         </div>
+        <!-- Lets users interact with execute button-->
         <div class = "ExampleCode">
             print(5+5)
         </div>
@@ -36,29 +47,223 @@
         </div>
         <div class = "Code">
         </div> 
+        <!-- Allows users to add in any number they want to add together and test with the execute button-->
         <div class = "SelfDo">
             Now you try it yourself!
             <div class = "exampleForm">
-                <input type = "text" id = "calc1"> + <input type = "text" id = "calc2">
+                <input type = "number" id = "calc1"> + <input type = "number" id = "calc2">
             </div>
-        </div>
-        <div class = "MobileOnly">
-            More info to be read on Computer!
         </div>
         <div class = "homeCalcButton">
             Execute!
         </div>
         <div class = "Code">
         </div> 
-    </div>
-    <div class = "page" id = "page1">
-        <div class = "Intro">
-            C++. A low level language that may bamboozle many people but once you get used to it, it wil heavily pay well
+        <!-- text only shown on mobile -->
+        <div class = "MobileOnly">
+            More info to be read on Computer!
         </div>
     </div>
+    <!-- cpp page (2nd page)-->
+    <div class = "page" id = "page1">
+        <div>
+            <!-- table of contents -->
+            <div class = "scrollWhole">
+                <div class = "scrollItemFirst"> Table of Contents</div>
+                <div class = "scrollItem" id = "scrollIntro">Intro</div>
+                <div class = "scrollItem" id = "scrollCout" >std::cout</div>
+                <div class = "scrollItem" id = "scrollCin" >std::cin</div>
+                <div class = "scrollItem" id = "scrollifElse">if else </div>
+            </div>
+            <!-- brief introduction, splits with the horizontal bar ( table of contents )-->
+            <div class = "secondHalf">
+                <div class = "Intro">
+                    C++. A low level language that may bamboozle many people but once you get used to it, it wil heavily pay well
+                </div>
+                <div class = "Continued">
+                    With harder syntax, this website will be able to allow you to learn the basics and pave the groundwork for your success!
+                </div>
+                <div class = "Continued" id = "para3">
+                    This will require knowldge in coding, so do take a look at the python page in this website!
+                </div>
+                <div class = "Intro" id = "para4">
+                    This will contain three main syntaxs : std::cout , std::cin , if else statements.
+                </div>
+                <!-- teaches player about std::cout-->
+                <div class = "Lesson" id = "cout">
+                    <div class = "Header">
+                        <div class = "Title" id = "coutTitle">
+                            <b>std::cout</b>
+                        </div>
+                        <div class = "Desc" id = "coutDesc"> The Most Common form of showing text in C++</div>
+                    </div>
+                    <div class = "Try">
+                        Try it Yourself!
+                    </div>
+                    <!-- allows player to input any text they want that will be shown when execute button is pressed-->
+                    <div class = "Codebox">
+                        std::cout &lt;&lt; <input type = "text" id = "coutInput" class = "inputField"> &lt;&lt; std::endl;
+                    </div>
+                    <div class = execButton id = "coutExec">
+                        Execute!
+                    </div>
+                    <!-- the area the result will appear in -->
+                    <div class = "Resultbox">
+                        <div class = "Result" id = "coutResult"></div>
+                    </div>
+                </div>
+                <!-- cin lesson -->
+                <div class = "Lesson" id = "cin">
+                    <div class = "Header">
+                        <div class = "Title" id = "cinTitle">
+                            <b>std::cin</b>
+                        </div>
+                        <div class = "Desc" id = "cinDesc"> This allows for a user to input an answer</div>
+                    </div>
+                    <div class = "Try">
+                        Try it Yourself!
+                    </div>
+                    <div class = "Codebox">
+                        int i;<br>
+                        <input type = "text" id = "cinInput" class = "inputField"> >> i;
+                    </div>
+                    <div class = execButton id = "cinExec">
+                        Execute!
+                    </div>
+                    <div class = "Resultbox">
+                        <div class = "Result" id = "cinResult"></div>
+                    </div>  
+                </div>
+                <!-- if lese lesson -->
+                <div class = "Lesson" id = "ifElse">
+                    <div class = "Header">
+                        <div class = "Title" id = "ifElseTitle">
+                            <b>if else</b>
+                        </div>
+                        <div class = "Desc" id = "ifElseDesc">Used to check conditions and returns two paths.</div>
+                    </div>
+                    <div class = "Try">
+                        Try it Yourself!
+                    </div>
+                    <div class = "Codebox">
+                        int i = 3;<br>
+                        <input type = "text" id = "ifElseInput" class = "inputField"> ( i == 3)<br>
+                        { <br>
+                            std::cout &lt;&lt; "Correct!" &lt;&lt; std::endl; <br>
+                        }
+                    </div>
+                    <div class = execButton id = "ifElseExec">
+                        Execute!
+                    </div>
+                    <div class = "Resultbox">
+                        <div class = "Result" id = "ifElseResult"></div>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </div>
+    <!-- python page (page 3) -->
     <div class = "page" id = "page2">
-        <div class = "Intro">
-            Python
+        <div>
+            <!-- Table of contents -->
+            <div class = "scrollWhole">
+                <div class = "scrollItemFirst"> Table of Contents</div>
+                <div class = "scrollItem" id = "scrollHistory">History</div>
+                <div class = "scrollItem" id = "scrollStart">Intro</div>
+                <div class = "scrollItem" id = "scrollprint" >print</div>
+                <div class = "scrollItem" id = "scrollinput" >input</div>
+                <div class = "scrollItem" id = "scrollif">if</div>
+            </div>
+            <!-- introduction -->
+            <div class = "secondHalf">
+                <div class = "Intro">
+                    Python. A High level language that is quick to learn and relatively easy to pick up.
+                </div>
+                <div class = "Continued">
+                    The programming language Python was conceived in the late 1980s and its implementation was started in December 1989.
+                </div>
+                <div class = "Continued" id = "pypara3">
+                    This will require knowldge in coding, so do take a look at the python page in this website!
+                </div>
+                <div class = "Intro" id = "pypara4">
+                    This will contain three main syntaxs : print , input , if else statements.
+                </div>
+                <div class = "Extra">
+                    <div class = "extra">
+                        Why was its name python?
+                    </div>
+                    <div class = "extraClicked">
+                        It's named after the BBC comedy series Monty Python's Flying Circus
+                    </div>
+                    <img src = "images/python.jpg" id = "pyImage" alt = "image of python icon">
+                    <img src = "images/monty.jpg" id = "montyImage" alt = "image of monty show">
+                </div>
+                <!-- Lesson on print statement -->
+                <div class = "Lesson" id = "print">
+                    <div class = "Header">
+                        <div class = "Title" id = "printTitle">
+                            <b>print</b>
+                        </div>
+                        <div class = "Desc" id = "printDesc"> The Most Common form of showing text in Python</div>
+                    </div>
+                    <div class = "Try">
+                        Try it Yourself!
+                    </div>
+                    <div class = "Codebox">
+                        <input type = "text" id = "printInput" class = "inputField">("Hello World!");
+                    </div>
+                    <div class = execButton id = "printExec">
+                        Execute!
+                    </div>
+                    <div class = "Resultbox">
+                        <div class = "Result" id = "printResult"></div>
+                    </div>
+                </div>
+                <!-- lesson on input statement -->
+                <div class = "Lesson" id = "input">
+                    <div class = "Header">
+                        <div class = "Title" id = "inputTitle">
+                            <b>input</b>
+                        </div>
+                        <div class = "Desc" id = "inputDesc"> This allows for a user to input an answer</div>
+                    </div>
+                    <div class = "Try">
+                        Try it Yourself!
+                    </div>
+                    <div class = "Codebox">
+                        name = <input type = "text" id = "inputInput" class = "inputField">("Name?")
+                    </div>
+                    <div class = execButton id = "inputExec">
+                        Execute!
+                    </div>
+                    <div class = "Resultbox">
+                        <div class = "Result" id = "inputResult"></div>
+                    </div>  
+                </div>
+                <!-- lesson on if statement -->
+                <div class = "Lesson" id = "if">
+                    <div class = "Header">
+                        <div class = "Title" id = "ifTitle">
+                            <b>if</b>
+                        </div>
+                        <div class = "Desc" id = "ifDesc">Used to check conditions.</div>
+                    </div>
+                    <div class = "Try">
+                        Try it Yourself!
+                    </div>
+                    <div class = "Codebox">
+                        i = "apple";<br>
+                        <input type = "text" id = "ifInput" class = "inputField"> i == "apple": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;print("apples!");
+                    </div>
+                    <div class = execButton id = "ifExec">
+                        Execute!
+                    </div>
+                    <div class = "Resultbox">
+                        <div class = "Result" id = "ifResult"></div>
+                    </div> 
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -2,73 +2,260 @@
 * {
     border: 0;
     margin: 0;
- }
-body{
-    background-color: black;
+    padding: 0;
 }
+/* toggles colors between light and dark mode */
+[data-theme="light"] {
+    --primary-color: black;
+    --secondary-color: white;
+    --hovered-color: gray;
+}
+[data-theme="dark"] {
+    --primary-color: green;
+    --secondary-color: black;
+    --hovered-color: yellowgreen;
+}
+/* set body background color */
+body{
+    background-color: var(--secondary-color);
+}
+/* navigation bar and elements insdie*/
 .navi{
-    background-color: GREEN;
+    background-color: var(--primary-color);
+    width: 100%;
     display: flex;
     font-size: 50px;
     height: fit-content;
-    padding-left: 10vw;
     right: 0;
     left: 0;
     position: fixed;
 }
 .navItem{
-    display: inline;
-    width: 30%;
+    color: var(--secondary-color);
 }
-.navWhole{
-
+#navBar{
+    padding-left: 0;
 }
+/* changes color when hovered */
 .navItem:hover{
-    background-color: greenyellow;
+    background-color:var(--hovered-color);
 }
+
+/* settings of each page */
 .page{
-    padding-top: 10vw;
+    padding-top: 75px;
+    width: 100%;
 }
+/* sets the general layout of the home page */
 .Intro,.ComputerOnly,.MobileOnly,.Continued,.Code,.ExampleCode,.CodeBox,.SelfDo{
     border-top: 1vw;
-    padding-top: 5vw;
-    padding-left: 2vw;
-    display: flex;
-    width: 100%;
-    color: green;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    display: block;
+    color: var(--primary-color);
     font-size: 25px;
 }
+/* second box to appear in a page after into */
+.Continued{
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+/* execute button in the home page*/
 .homeCalcButton{
     border-top: 1vw;
     margin: 2vw;
-    padding-left: 1vw;
-    height: 4vw;
-    width: 12vw;
+    height: 25px;
+    width: 50%;
     font-size: 25px;
-    background-color: green;
+    background-color: var(--primary-color);
+    right: 50%;
+    color: var(--secondary-color);
 }
 .homeCalcButton:hover{
-    background-color: greenyellow;
+    background-color:var(--hovered-color);
 }
+/* examples given in home page */
 .exampleForm{
     width: 100%;
+}
+.ExampleCode{
+    width: 90%;
+    display: flex;
+}
+.Code{
+    display: flex;
+    width: 100%;
+    float: left;
+}
+.Header,.Try{
+    width: 100%;
+    float: left;
+}
+.Try{
+    font-size: 30px;
+    float: left;
+}
+.SelfDo{
+
+    width: 100%;
+}
+/* cpp component */
+.scrollWhole{
+    background-color:var(--primary-color);
+    width: 150px;
+    height: 100vh;
+    float: left;
+}
+.scrollItem,.scrollItemFirst{
+    display: block;
+    padding-left: 2vw;
+    padding-top: 5vh;
+    width: 85%;
+    font-size: 30px;
+    padding-bottom: 5vh;
+    color: var(--secondary-color);
+}
+.scrollItem:hover{
+    background-color: var(--hovered-color);
+}
+/* splits with table of contents bar */
+.secondHalf{
+    float:left;
+    right: 0;
+    width: 80%;
+}
+/* cpp lesson 1 component */
+.Lesson{
+    margin-top: 10vh;
+    float: left;
+    width: 100%;
+    background-color: var(--primary-color);
+    margin-bottom: 10vh;
+}
+/* sets the title of each lesson */
+.Title{
+    color: var(--secondary-color);
+    font-size: 50px;
+    width: 50%;
+    height: fit-content;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    float: left;
+}
+.Title:hover{
+    background-color: var(--hovered-color);
+}
+/* sets the description of the lesson - relative position for animation */
+.Desc{
+    color: var(--secondary-color);
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    width: 50%;
+    font-size:30px;
+    float: left;
+    position:relative;
+    display: none;
+}
+.Codebox{
+    color: var(--secondary-color);
+    padding-left: 5vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    width: 100%;
+    float: left;
+}
+/* button to execute code */
+.execButton{
+    color: var(--secondary-color);
+    width: fit-content;
+    font-size: 50px;
+    float: left;
+}
+/* shows the output of the code */
+.Result{
+    color: var(--secondary-color);
+    width: 100%;
+    font-size: 35px;
+    height: 0;
+    float: left;
+}
+.Resultbox{
+    background-color: var(--primary-color);
+    width: 100%;
+    padding-top: 5vh;
+    padding-bottom: 15vh;
+    float: left;
+}
+.execButton:hover{
+    background-color: var(--hovered-color);
+}
+/*python component>*/
+.extra{
+    width: 100%;
+    float:left;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    font-size: 25px;
+}
+.Extra{
+    background-color: var(--primary-color);
+    width: 100%;
+    float: left;
+    height: 100vh;
+}
+.extraClicked{
+    display: none;
+    float: left;
+    font-size: 20px;
+    width: 100%;
+    padding-bottom: 5vh;
+}
+.extra:hover{
+    background-color:var(--hovered-color);
+}
+#pyimage, #montyImage{
+    display: flex;
+    float:left;
+}
+#montyImage, #pyImage{
+    width: 200px;
+    height: 180px;
 }
 /* checks if media is NOT computer */
 @media (max-width:800px) {
     .ComputerOnly{
         display: none;
     }
+    /* change layout of text */
     .Intro,.Continued,.ComputerOnly,.MobileOnly{
         width: 50%;
+        float: left;
     }
     .navItem,.navTitle{
         width: 100%;
         display: flex;
-        justify-content: center;
     }
     .navi{
         padding-left: 0vw;
         justify-content: center;
+    }
+    /* changes top navigation bar into a hamburger */
+    #homeButton,#cppButton,#pyButton,#darkModeButton{
+        display: none;
+    }
+    .scrollWhole{
+        display: none;
+    }
+    .navItem{
+        font-size: 30px;
+    }
+    /* change layout of images*/
+    #montyImage, #pyImage{
+        padding-left: 27%;
+        width: 200px;
+        height: 180px;
     }
     
     
@@ -77,5 +264,21 @@ body{
 @media (min-width:800px) {
     .MobileOnly{
         display: none;
-    }  
+    } 
+    .navItem{
+        display: inline;
+    }
+    /* alternates the color of the text */
+    #para3,#pypara3{
+        color: var(--primary-color);
+        background-color: var(--secondary-color);
+    }
+    #para4,#pypara4{
+        color: var(--secondary-color);
+        background-color: var(--primary-color);
+    }
+    /* changes height as layout of images changes within*/
+    .Extra{
+        height: 60vh;
+    }
 }
